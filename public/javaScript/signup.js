@@ -4,6 +4,7 @@ document.getElementById('signup-form').addEventListener('submit', async (event) 
   const password = document.getElementById('password').value;
 
   try {
+    console.log('Enviando requisição para /signup');
     const response = await fetch('/signup', {
       method: 'POST',
       headers: {
@@ -13,6 +14,7 @@ document.getElementById('signup-form').addEventListener('submit', async (event) 
     });
 
     const data = await response.json();
+    console.log('Resposta recebida:', data);
     if (data.error) {
       alert(data.error);
     } else {

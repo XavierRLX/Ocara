@@ -19,12 +19,15 @@ app.get('/', (req, res) => {
 });
 
 app.post('/signup', async (req, res) => {
+  console.log('Recebido POST /signup');
+  console.log('Body:', req.body);
   const { email, password } = req.body;
   try {
     const { user, error } = await supabase.auth.signUp({ email, password });
 
     if (error) {
       console.error('Error creating user:', error.message);
+      console.log('Supabase response:', error);
       return res.status(400).json({ error: error.message });
     }
 
