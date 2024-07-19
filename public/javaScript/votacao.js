@@ -4,8 +4,8 @@ const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJ
 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 if (userInfo) {
     document.getElementById('nameuser').innerHTML = `${userInfo.nameuser} `;
-    if (userInfo.votonameuser != null ) {
-    document.getElementById('meuVoto').innerHTML = `${userInfo.votonameuser}`;
+    if (userInfo.votonameuser != null) {
+        document.getElementById('meuVoto').innerHTML = `${userInfo.votonameuser}`;
     } else {
         document.getElementById('meuVoto').innerHTML = 'Nenhum voto';
     }
@@ -45,11 +45,13 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
     const submitButton = event.target.querySelector('button[type="submit"]');
     submitButton.disabled = true;
 
+
     if (userInfo.votou) {
         alert('Você já votou!');
+        submitButton.disabled = false;
         return;
     }
-    // Fetch the selected user's name and totalVotos
+
     const userUrl = `${supabaseUrl}/rest/v1/users?id=eq.${selectedUserId}`;
     let response = await fetch(userUrl, {
         method: 'GET',
@@ -65,7 +67,6 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
             let user = users[0];
             const newTotalVotos = user.totalVotos + 1;
 
-            // Atualizar o totalVotos para o usuário selecionado
             const updateUrl = `${supabaseUrl}/rest/v1/users?id=eq.${selectedUserId}`;
             response = await fetch(updateUrl, {
                 method: 'PATCH',
@@ -77,7 +78,6 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
             });
 
             if (response.ok) {
-                // Atualizar o campo 'votou' e 'votonameuser' para o usuário que votou
                 const voterId = userInfo.id; 
                 const voterUpdateUrl = `${supabaseUrl}/rest/v1/users?id=eq.${voterId}`;
                 response = await fetch(voterUpdateUrl, {
@@ -98,6 +98,9 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
                     userInfo.votonameuser = user.nameuser;
                     submitButton.disabled = false;
 
+                    localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+                    document.getElementById('meuVoto').innerHTML = `${user.nameuser}`;
                 } else {
                     const data = await response.json();
                     alert('Erro ao atualizar o campo "votou" ou "votonameuser": ' + data.error);
@@ -112,8 +115,6 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
     } else {
         alert('Erro ao buscar usuário.');
     }
-
 });
 
-// Populate the user list when the page loads
 document.addEventListener('DOMContentLoaded', populateUserList);
