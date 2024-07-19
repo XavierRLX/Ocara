@@ -28,6 +28,8 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
 
     if (response.ok) {
         alert('Usuário cadastrado com sucesso!');
+        event.target.nameuser.value = '';
+        event.target.password.value = '';
     } else {
         const data = await response.json();
         alert('Erro: ' + data.error);

@@ -15,7 +15,9 @@ app.use('/javaScript', express.static(path.join(__dirname, 'public/javaScript'))
 // Definindo rotas dinamicamente
 const routes = [
   { path: '/', file: 'login.html' },
-  { path: '/signup', file: 'sugnup.html' },
+  { path: '/login', file: 'login.html' },
+  { path: '/signup', file: 'signup.html' },
+  { path: '/votacao', file: 'votacao.html' },
 ];
 
 routes.forEach(route => {

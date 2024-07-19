@@ -17,9 +17,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       const data = await response.json();
       const user = data.find(u => u.nameuser === nameuser && u.password === password);
       if (user) {
-          // Armazena as informações do usuário no localStorage
           localStorage.setItem('userInfo', JSON.stringify(user));
-          // Redireciona para a página infoUsuario
           window.location.href = 'votacao';
       } else {
           alert('Email ou senha incorretos');
