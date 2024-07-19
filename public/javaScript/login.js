@@ -1,23 +1,30 @@
-document.getElementById('login-form').addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-  
-    const response = await fetch('/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email, password })
-    });
-  
-    const data = await response.json();
-    if (data.error) {
-      alert(data.error);
-    } else {
-      alert('Login realizado com sucesso!');
-    }
-  });
-  
+document.getElementById('loginForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const nameuser = event.target.nameuser.value;
+  const password = event.target.password.value;
 
-  //dAjBGrQlUK3Avufc
+  const supabaseUrl = 'https://pzjmkmgqjxvmhmhuddiy.supabase.co';
+  const url = `${supabaseUrl}/rest/v1/users?select=*`;
+  const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6am1rbWdxanh2bWhtaHVkZGl5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjEyNDMzMjAsImV4cCI6MjAzNjgxOTMyMH0.SgizVK5qT6ibYWQ4GRO1Ppy9cuaNTvchy-bsWT-0YYY',
+      },
+  });
+
+  if (response.ok) {
+      const data = await response.json();
+      const user = data.find(u => u.nameuser === nameuser && u.password === password);
+      if (user) {
+          // Armazena as informações do usuário no localStorage
+          localStorage.setItem('userInfo', JSON.stringify(user));
+          // Redireciona para a página infoUsuario
+          window.location.href = 'votacao';
+      } else {
+          alert('Email ou senha incorretos');
+      }
+  } else {
+      alert('Erro ao fazer login');
+  }
+});
