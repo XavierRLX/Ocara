@@ -42,6 +42,9 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
     event.preventDefault();
     const selectedUserId = document.getElementById('vote').value;
 
+    const submitButton = event.target.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+
     if (userInfo.votou) {
         alert('Você já votou!');
         return;
@@ -93,6 +96,7 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
                     alert('Votação confirmada com sucesso!');
                     userInfo.votou = true;
                     userInfo.votonameuser = user.nameuser;
+                    submitButton.disabled = false;
 
                 } else {
                     const data = await response.json();
@@ -108,6 +112,7 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
     } else {
         alert('Erro ao buscar usuário.');
     }
+
 });
 
 // Populate the user list when the page loads
