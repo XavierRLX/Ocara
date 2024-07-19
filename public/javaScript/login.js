@@ -16,6 +16,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
   if (response.ok) {
       const data = await response.json();
       const user = data.find(u => u.nameuser === nameuser && u.password === password);
+      
       if (user) {
           localStorage.setItem('userInfo', JSON.stringify(user));
           window.location.href = 'votacao';

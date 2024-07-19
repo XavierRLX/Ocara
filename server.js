@@ -18,6 +18,7 @@ const routes = [
   { path: '/login', file: 'login.html' },
   { path: '/signup', file: 'signup.html' },
   { path: '/votacao', file: 'votacao.html' },
+  { path: '/resultado', file: 'resultado.html'}
 ];
 
 routes.forEach(route => {
