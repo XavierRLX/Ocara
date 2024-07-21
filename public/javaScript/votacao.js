@@ -14,7 +14,7 @@ if (userInfo) {
 }
 
 async function populateUserList() {
-    const url = `${supabaseUrl}/rest/v1/users`;
+    const url = `${supabaseUrl}/rest/v1/users?ativo=eq.true`; // Filtra usuários ativos
     const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -37,6 +37,7 @@ async function populateUserList() {
         console.error('Erro ao buscar usuários');
     }
 }
+
 
 document.getElementById('voteForm').addEventListener('submit', async (event) => {
     event.preventDefault();
