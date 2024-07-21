@@ -14,16 +14,20 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
   });
 
   if (response.ok) {
-      const data = await response.json();
-      const user = data.find(u => u.nameuser === nameuser && u.password === password);
-      
-      if (user) {
-          localStorage.setItem('userInfo', JSON.stringify(user));
-          window.location.href = 'votacao';
-      } else {
-          alert('Email ou senha incorretos');
-      }
-  } else {
-      alert('Erro ao fazer login');
-  }
+    const data = await response.json();
+    const user = data.find(u => u.nameuser === nameuser && u.password === password);
+    
+    if (user) {
+        if (user.ativo) {
+            localStorage.setItem('userInfo', JSON.stringify(user));
+            window.location.href = 'votacao';
+        } else {
+            alert('Usuário inativo, entre em contato com o administrador');
+        }
+    } else {
+        alert('Email ou senha incorretos');
+    }
+} else {
+    alert('Erro ao fazer login');
+}
 });
