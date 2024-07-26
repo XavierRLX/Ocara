@@ -7,14 +7,15 @@
     --corBlack: #000 ;
 }
 
+#ondas {
+    margin-top: -90px;
+}
 
 * {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;;
 }
-
-
 
 .flex {
     display: flex;

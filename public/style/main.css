@@ -6,8 +6,8 @@ main {
     height: 100vh;
     color: var(--corLetraCinza);
     box-shadow: 1px 7px 26px -7px rgba(0,0,0,0.63);
-    margin-top: 30px;
-    border-radius: 15px;
+    margin-top: -210px;
+    border-radius: 10px;
 
 }
 
