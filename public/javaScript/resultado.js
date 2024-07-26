@@ -1,7 +1,7 @@
 const supabaseUrl = 'https://pzjmkmgqjxvmhmhuddiy.supabase.co';
 
 async function carregaVotos() {
-    const url = `${supabaseUrl}/rest/v1/users?ativo=eq.true`;
+    const url = `${supabaseUrl}/rest/v1/users?ativo=eq.true&order=totalVotos.desc`;
     const response = await fetch(url, {
         method: 'GET',
         headers: {
