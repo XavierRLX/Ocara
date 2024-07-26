@@ -1,0 +1,7 @@
+main h1 {
+    color: var(--corLetraCinza);
+}
+main section {
+    padding: 10px;
+    border-radius: 10px;
+}
