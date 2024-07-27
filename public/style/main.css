@@ -2,12 +2,10 @@ main {
     background-color: rgb(255, 255, 255);
     max-width: 1000px;
     margin: 0 auto;
-    padding: 1em;
-    height: 100vh;
+    padding: 10px;
+    height: 60vw;
     color: var(--corLetraCinza);
     box-shadow: 1px 7px 26px -7px rgba(0,0,0,0.63);
-    margin-top: -210px;
     border-radius: 10px;
-
 }
 
