@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="../style/header.css">
   <link rel="stylesheet" href="../style/main.css">
   <link rel="stylesheet" href="../style/login.css">
+  <link rel="stylesheet" href="../style/alerta.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
@@ -22,15 +23,24 @@
       <h1 class="p10">Cadastro</h1>
       <div class="linha"></div>
       <form id="registerForm">
-      <input type="text" id="nameuser" placeholder="Usuário..." required>
-      <input type="password" id="password" placeholder="Senha..." required>
-      <input type="number" id="cpf" placeholder="CPF..." required>
+      <input type="text" id="nameuser" maxlength="20" placeholder="Usuário..." required>
+      <input type="password" id="password" maxlength="20" placeholder="Senha..." required>
+      <input type="number" id="cpf" maxlength="20" placeholder="CPF..." required>
       <button class="btn" type="submit">Criar</button>
       </form>
       <div class="linha"></div>
         <a class="btn p10" href="/login"><p>Login</p></a>
     </main>
+
+    <div id="customAlert" class="custom-alert">
+      <div class="custom-alert-content">
+          <h2 id="alertTitle">Título</h2>
+          <p id="alertText">Texto do alerta</p>
+          <button id="alertButton">OK</button>
+      </div>
+  </div>
   <script src="../javascript/signup.js"></script>
   <script src="../javaScript/validaCPF.js"></script>
+  <script src="../javaScript/alerta.js"></script>
 </body>
 </html>

@@ -22,10 +22,10 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
             localStorage.setItem('userInfo', JSON.stringify(user));
             window.location.href = 'votacao';
         } else {
-            alert('Usuário inativo, entre em contato com o administrador');
+            disparoAlerta('Atenção','Usuário inativo, entre em contato com o administrador');
         }
     } else {
-        alert('Email ou senha incorretos');
+        disparoAlerta('Atenção', 'Email ou senha incorretos');
     }
 } else {
     alert('Erro ao fazer login');

@@ -16,7 +16,7 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
     const cpf = cpfInput.value;
 
     if (!isCPFValid(cpf)) {
-        alert("CPF inválido. Por favor, insira um CPF válido.");
+        disparoAlerta('Atenção', 'CPF inválido. Por favor, insira um CPF válido.');
         return;
     }
 
@@ -40,8 +40,10 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
     });
 
     if (response.ok) {
-      alert("Usuário cadastrado com sucesso!");
+      disparoAlerta( "Parabéns" , "Usuário cadastrado com sucesso !");
+      setTimeout(() => {
       window.location.href = "/login"
+      }, 2000);
       
     } else {
       const data = await response.json();

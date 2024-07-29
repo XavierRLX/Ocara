@@ -48,7 +48,7 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
 
 
     if (userInfo.votou) {
-        alert('Você já votou!');
+        disparoAlerta('Atenção', 'Você já votou!');
         submitButton.disabled = false;
         return;
     }
@@ -94,7 +94,7 @@ document.getElementById('voteForm').addEventListener('submit', async (event) => 
                 });
 
                 if (response.ok) {
-                    alert('Votação confirmada com sucesso!');
+                    disparoAlerta( 'Parabéns','Votação confirmada com sucesso!');
                     userInfo.votou = true;
                     userInfo.votonameuser = user.nameuser;
                     submitButton.disabled = false;
