@@ -3,9 +3,8 @@ main {
     max-width: 1000px;
     margin: 0 auto;
     padding: 10px;
-    height: 60vw;
     color: var(--corLetraCinza);
     box-shadow: 1px 7px 26px -7px rgba(0,0,0,0.63);
     border-radius: 10px;
+    margin-top: 20px;
 }
-

@@ -1,8 +1,9 @@
 main h1 {
     color: var(--corLetraCinza);
-    margin-top: 20px;
 }
-main section {
-    padding: 10px;
+main .votacao {
     border-radius: 10px;
+}
+
+main .votacao #nameuser {
 }

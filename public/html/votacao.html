@@ -21,22 +21,28 @@
     </div>
       <img id="ondas" src="https://pzjmkmgqjxvmhmhuddiy.supabase.co/storage/v1/object/public/Imgs/ondasp.png" alt="">
   </header>
-  <main>
-    <h1>Votação</h1>
-    <section>
-      <h2 id="nameuser"></h2>
-      <form id="voteForm">
-        <label for="vote">Selecione " Cara" :</label>
-        <select id="vote" name="vote" required>
-        </select><br><br>
-        <button type="submit">Confirmar Votação</button>
+  <main class="centralizada">
+      <h1 class="p10">Votação</h1>
+      <div class="linha"></div>
+    <section class="votacao p10" >
+      <h2 class="p10" id="nameuser"></h2>
+      <form class="p10" id="voteForm">
+        <label for="vote"></label>
+        <select id="vote" name="vote" required></select><br><br>
+        <button type="submit">Confirmar</button>
       </form>
-      <h2>Meu voto:</h2>
-      <p id="meuVoto"> Sem voto. </p>
+      <h2 class="p10">Meu voto:</h2>
+      <p class="p10" id="meuVoto"> Sem voto. </p>
     </section>
-    <p>Ir para o <a href="/resultado">resultado</a></p>
-    <p><a href="/login">Sair</a></p>
+    <div class="linha"></div>
+    <section class="p10">
+      <p>Ir para o <a href="/resultado">resultado</a></p>
+      <p><a href="/login">Sair</a></p>
+    </section>
   </main>
+  <footer>
+   
+  </footer>
 </body>
 <script src="../javascript/votacao.js"></script>
 <script src="../javaScript/formatacao.js"></script>
