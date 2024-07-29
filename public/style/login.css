@@ -1,0 +1,9 @@
+#mainLogin{
+    max-width: 500px !important;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

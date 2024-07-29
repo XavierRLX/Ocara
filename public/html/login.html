@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../style/format.css">
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/login.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-  <h1>Login</h1>
-  <form id="loginForm">
-      <label for="nameuser">Usuário:</label>
-      <input type="text" id="text" name="nameuser" required>
-      <br>
-      <label for="password">Senha:</label>
-      <input type="password" id="password" name="password" required>
-      <br> <br>
-      <button type="submit">Entrar</button>
-
-  </form>
+  <header>
+    <div class="flex">
+      <img class="imgLogo" src="https://pzjmkmgqjxvmhmhuddiy.supabase.co/storage/v1/object/public/Imgs/logoNu.png"
+      alt="logo">
+     <p> O CARA</p>
+    </div>
+      <img id="ondas" src="https://pzjmkmgqjxvmhmhuddiy.supabase.co/storage/v1/object/public/Imgs/ondasp.png" alt="">
+  </header>
+  <main id="mainLogin" class="centralizada">
+    <h1 class="p10">Login</h1>
+    <div class="linha"></div>
+    <form class="p10" id="loginForm">
+      <div>
+        <label for="nameuser">Usuário:</label> <br/>
+        <input type="text" id="text" name="nameuser" required>
+      </div>
+        <br>
+        <div>
+          <label for="password">Senha:</label> <br/>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button class="btn p10" type="submit">Entrar</button>
+    </form>
+    
+  </main>
 <br>
   <a href="/signup">Criar Usuário</a> <br>
   <a href="/resultado">Resultado</a>
