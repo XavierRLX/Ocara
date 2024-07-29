@@ -1,5 +1,5 @@
 #mainLogin, #mainSignup{
-    max-width: 500px !important;
+    max-width: 500px ;
 }
 
 form {
@@ -7,4 +7,10 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media  (max-width : 600px) {
+    #mainLogin, #mainSignup {
+        max-width: 90%;
+    }
 }

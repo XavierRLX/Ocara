@@ -8,3 +8,9 @@ main {
     border-radius: 10px;
     margin-top: 20px;
 }
+
+@media  (max-width :1200px) {
+    main {
+        max-width: 90%;
+    }
+}
