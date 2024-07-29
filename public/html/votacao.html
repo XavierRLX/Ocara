@@ -29,15 +29,17 @@
       <form class="p10" id="voteForm">
         <label for="vote"></label>
         <select id="vote" name="vote" required></select><br><br>
-        <button type="submit">Confirmar</button>
-      </form>
-      <h2 class="p10">Meu voto:</h2>
-      <p class="p10" id="meuVoto"> Sem voto. </p>
+        <button class="btn" type="submit">Confirmar</button>
+      </form> 
+      <div id="meuVotoDiv" class="flex">
+        <h2 class="p10">Meu voto:</h2>
+        <p class="p10" id="meuVoto"> Sem voto. </p>
+      </div>
     </section>
     <div class="linha"></div>
-    <section class="p10">
-      <p>Ir para o <a href="/resultado">resultado</a></p>
-      <p><a href="/login">Sair</a></p>
+    <section class="btnLinksVt">
+      <p class="btn p10"><a id="aResultado" href="/resultado">Resultado</a></p>
+      <p id="btnSairVt" class="btn p10"><a href="/login">Sair</a></p>
     </section>
   </main>
   <footer>

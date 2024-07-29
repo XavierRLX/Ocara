@@ -1,9 +1,11 @@
-main h1 {
-    color: var(--corLetraCinza);
-}
+
 main .votacao {
     border-radius: 10px;
 }
 
-main .votacao #nameuser {
+#meuVotoDiv {
+    align-items: center;
+}
+.btnLinksVt {
+    text-align: end;
 }
