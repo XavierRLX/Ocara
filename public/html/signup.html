@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">    <link rel="stylesheet" href="../style/format.css">
+  <link rel="stylesheet" href="../style/header.css">
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/login.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 <body>
-  <form id="registerForm">
-    <input type="text" id="nameuser" placeholder="Usuário..." required>
-    <input type="password" id="password" placeholder="Senha..." required>
-    <input type="number" id="cpf" placeholder="CPF..." required>
-    <button type="submit">Criar</button>
-  </form>
-
-  <a href="/login"><p>Login</p></a>
+  <header>
+      <div class="flex">
+        <img class="imgLogo" src="https://pzjmkmgqjxvmhmhuddiy.supabase.co/storage/v1/object/public/Imgs/logoNu.png"
+        alt="logo">
+       <p> O CARA</p>
+      </div>
+        <img id="ondas" src="https://pzjmkmgqjxvmhmhuddiy.supabase.co/storage/v1/object/public/Imgs/ondasp.png" alt="">
+        </header>
+    <main id="mainSignup" class="centralizada">
+      <h1 class="p10">Cadastro</h1>
+      <div class="linha"></div>
+      <form id="registerForm">
+      <input type="text" id="nameuser" placeholder="Usuário..." required>
+      <input type="password" id="password" placeholder="Senha..." required>
+      <input type="number" id="cpf" placeholder="CPF..." required>
+      <button class="btn" type="submit">Criar</button>
+      </form>
+      <div class="linha"></div>
+        <a class="btn p10" href="/login"><p>Login</p></a>
+    </main>
   <script src="../javascript/signup.js"></script>
   <script src="../javaScript/validaCPF.js"></script>
 </body>

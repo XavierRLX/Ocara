@@ -3,7 +3,7 @@ const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJ
 
 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 if (userInfo) {
-    document.getElementById('nameuser').innerHTML = `${userInfo.nameuser}, faça a sua escolha ! `;
+    document.getElementById('nameuser').innerHTML = `${userInfo.nameuser}, escolha o cara! `;
     if (userInfo.votonameuser != null) {
         document.getElementById('meuVoto').innerHTML = `${userInfo.votonameuser}`;
     } else {

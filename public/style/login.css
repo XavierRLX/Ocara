@@ -1,6 +1,7 @@
-#mainLogin{
+#mainLogin, #mainSignup{
     max-width: 500px !important;
 }
+
 form {
     display: flex;
     flex-direction: column;
